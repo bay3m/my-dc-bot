@@ -1,4 +1,6 @@
-
+# this does not work
+#source from github, docs
+from note import TOKEN
 import discord
 
 intents = discord.Intents.default()
@@ -19,7 +21,7 @@ async def on_message(message):
         await message.channel.send('Hello!')
 
 def run_bot():
-    client.run('MTE2ODc2MTYwMzkxMTYwMjE5Ng.Gw7z2Q.UGRDbXMRgrX3wrC4iXYkHxKfgZ9R-hscUQNuXs')
+    client.run('TOKEN')
 
 if __name__ == "__main__":
     run_bot()
