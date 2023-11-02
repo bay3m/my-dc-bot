@@ -6,7 +6,7 @@ from note import TOKEN
 import discord
 
 intents = discord.Intents.default()
-# intents.typing = False
+intents.typing = False
 intents.presences = False
 
 def handelResponse(message):
@@ -41,8 +41,7 @@ def run_discord_bot():
      
         username     = message.author
         channel      = message.channel
-
-        is_private = isinstance(message.channel, discord.DMChannel)
+        is_private   = isinstance(message.channel, discord.DMChannel)
         user_message = message.content.lower()
 
         if user_message.startswith('?'):
@@ -50,14 +49,11 @@ def run_discord_bot():
             await send_message(message, user_message, is_private=True)
 
         else:
-            await send_message(message, user_message, is_private)
+            response = handelResponse(user_message)
+            if response:
+                await send_message(message, user_message, is_private)
 
-        # response = handelResponse(user_message)
-
-        # if response:
-        #     await send_message(message, response, is_private)
-
-        print(f'{username} $ {user_message} & {channel}')
+        print(f'{username} -- {user_message} -- {channel}')
 
     client.run(token)
 
