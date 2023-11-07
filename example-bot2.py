@@ -1,13 +1,11 @@
 #FROM YT
 #source: https://youtu.be/hoDLj0IzZMU?si=4UjRroo1BuNaQ7GX
-#this works but not really works
-#problem: cant receive message.content
+#
+#problem: recieve message in DM but not in server
 from note import TOKEN
 import discord
 
-intents = discord.Intents.default()
-intents.typing = False
-intents.presences = False
+intents = discord.Intents.all()
 
 def handelResponse(message):
     p_message = message.lower()
