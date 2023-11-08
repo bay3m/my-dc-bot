@@ -1,7 +1,7 @@
 #FROM YT
 #source: https://youtu.be/hoDLj0IzZMU?si=4UjRroo1BuNaQ7GX
-#
-#problem: recieve message in DM but not in server
+#this is works
+
 from note import TOKEN
 import discord
 
